@@ -1,0 +1,244 @@
+import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
+import "swiper/css";
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+
+//data
+import products from '../Products.json';
+
+import serviceImg1 from '../assets/service-icon-1.svg';
+import serviceImg2 from '../assets/service-icon-2.svg';
+import serviceImg3 from '../assets/service-icon-3.svg';
+import serviceImg4 from '../assets/service-icon-4.svg';
+
+import brand1 from '../assets/brand-1.png';
+import brand2 from '../assets/brand-2.png';
+import brand3 from '../assets/brand-3.png';
+import brand4 from '../assets/brand-4.png';
+import brand5 from '../assets/brand-5.png';
+import brand6 from '../assets/brand-6.png';
+
+import shoesbanner from '../assets/Shoes-banner.jpg';
+
+import discover1 from '../assets/shoes-banner-image-01.png';
+import discover2 from '../assets/shoes-banner-image-02.png';
+
+import socialImage1 from '../assets/social-image-1.png';
+import socialImage2 from '../assets/social-image-2.png';
+import socialImage3 from '../assets/social-image-3.png';
+import socialImage4 from '../assets/social-image-4.png';
+import socialImage5 from '../assets/social-image-5.png';
+
+const Index = () => {
+    const [filterSortOption, setfilterSortOption] = useState('all');
+    const navigte = useNavigate();
+
+    const addToWishlist = (products) => {
+        const existing = JSON.parse(localStorage.getItem('wishlist')) || [];
+        if (!existing.some(p => p.id === products.id)) {
+            const updated = [...existing, products];
+            localStorage.setItem('wishlist', JSON.stringify(updated));
+            window.dispatchEvent(new Event('wishlistUpdated'));
+            toast.success(`${products.productname} added to your wishlist!`)
+        } else {
+            toast.info(`${products.productname} is already in your wishlist.`)
+        }
+    };
+    const addToCart = (products) => {
+        const existing = JSON.parse(localStorage.getItem('cart')) || [];
+        if (!existing.some(p => p.id === products.id)) {
+            const updated = [...existing, products];
+            localStorage.setItem('cart', JSON.stringify(updated));
+            window.dispatchEvent(new Event('cartUpdated'));
+            toast.success(`${products.productname} added to your cart!`)
+        } else {
+            toast.info(`${products.productname} is already in your cart.`)
+        }
+    };
+
+    const images = [socialImage1, socialImage2, socialImage3, socialImage4, socialImage5];
+
+
+    return (
+        <>
+            {/** Hero */}
+            <div className="hero">
+                <Swiper
+                    slidesPerView={1}
+                    spaceBetween={0}
+                    modules={[EffectFade, Autoplay]}
+                    effect='fade'
+                    loop={true}
+                    autoplay={{ delay: 3000 }}
+                >
+                    <SwiperSlide>
+                        <div className='hero-wrap hero-wrap1 px-[8%] lg:px-[12%]'>
+                            <div className="hero-content">
+                                <h5 className="pt-10">- 50% off Shoes Sale -</h5>
+                                <h1>Shoe Must-Haves <span className='text-[#ff823a]'>For Man!</span></h1>
+                                <p className='my-3'> Shoes go beyond mere utility; they showcase individual style, cultural identity, and advances in design</p>
+                                <a href="#" className='btn hero-btn px-4 py-2 rounded'>Shop Now</a>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='hero-wrap hero-wrap2 px-[8%] lg:px-[12%]'>
+                            <div className="hero-content">
+                                <h5 className="pt-10">- NEW COLLECTONS -</h5>
+                                <h1>Get The Perfectly <br /> Shoes <span className='text-[#ff823a]'>Best Price!</span></h1>
+                                <p className='my-3'> Shoes serve more than a purpose; they reflect individuality, cultural history, and modern technology</p>
+                                <a href="#" className='btn hero-btn px-4 py-2 rounded '>Shop Now</a>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+
+                </Swiper>
+            </div>
+
+            {/** Products */}
+            <div className="products-container px-[8%] lg:px-[12%] py-[50px] my-12">
+                <div className="relative">
+                    <div className="row">
+                        <div className="section-title mb-12 product-title text-center">
+                            <h2 className='font-semibold text-3xl'>Our Latest Products</h2>
+                            <p className="text-gray-500">Get The Trending Shoes</p>
+                        </div>
+                    </div>
+                    <Swiper
+                        slidesPerView={4}
+                        spaceBetween={20}
+                        modules={[Navigation]}
+                        navigation={{ nextEl: ".product-swiper-next", prevEl: ".product-swiper-prev" }}
+                        breakpoints={{
+                            1399: { slidesPerView: 4 },
+                            1199: { slidesPerView: 3 },
+                            991: { slidesPerView: 2 },
+                            767: { slidesPerView: 1.5 },
+                            0: { slidesPerView: 1 },
+                        }}
+                        className='mt-4 swiper relative'
+                    >
+                        {products.filter(product => product.id >= 5 && product.id <= 10).map(product => (
+                            <SwiperSlide key={product.id}>
+                                <div className="product-item text-center relative">
+                                    <div className="product-image w-full relative overflow-hidden">
+                                        <img src={product.image} alt="product" className="w-full h-auto" />
+                                        <img src={product.secondImage} alt="product" className="w-full h-auto" />
+                                        <div className="product-icons gap-3 flex justify-center items-center absolute transition duration-300">
+                                            <div className="product-icon cursor-pointer" title='Add to Wishlist' onClick={() => addToWishlist(product)}>
+                                                <i className='bi bi-heart text-lg'></i>
+                                            </div>
+                                            <div className="product-icon cursor-pointer" title='Add to Cart' onClick={() => addToCart(product)}>
+                                                <i className='bi bi-cart3 text-lg'></i>
+                                            </div>
+                                        </div>
+                                        {product.tag && (
+                                            <span className={`badge text-white absolute top-2 left-2 text-xs px-2 py-1 rounded ${product.tag === 'Sale' ? 'bg-red-600' : 'bg-green-600'}`}>
+                                                {product.tag}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <Link to={`/product/${product.id}`} className='no-underline text-black'>
+                                        <div className="product-content pt-2">
+                                            <span className='price no-underline'>
+                                                {product.price}
+                                            </span>
+                                            <h3 className='title'>
+                                                {product.productname}
+                                            </h3>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </SwiperSlide>
+
+                        ))}
+                    </Swiper>
+                </div>
+            </div>
+
+            {/** Services */}
+            <div className='px-[8%] lg:px-[12%] pb-[50px] py-10'>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <img src={serviceImg1} alt="Free Shipping" className='w-[100px] mx-auto' />
+                        <h4 className='mb-2 text-2xl font-bricolage font-semibold'>Free Shipping</h4>
+                        <p className='text-gray-600 text-sm font-medium'>
+                            Free Shipping for orders over 3000 Taka
+                        </p>
+                    </div>
+                    <div>
+                        <img src={serviceImg2} alt="Free Shipping" className='w-[100px] mx-auto' />
+                        <h4 className='mb-2 text-2xl font-bricolage font-semibold'>Retuns</h4>
+                        <p className='text-gray-600 text-sm font-medium'>
+                            Within 30 days for an exchange.
+                        </p>
+                    </div>
+                    <div>
+                        <img src={serviceImg3} alt="Free Shipping" className='w-[100px] mx-auto' />
+                        <h4 className='mb-2 text-2xl font-bricolage font-semibold'>Online Support</h4>
+                        <p className='text-gray-600 text-sm font-medium'>
+                            24 hours a day, 7 days a week
+                        </p>
+                    </div>
+                    <div>
+                        <img src={serviceImg4} alt="Free Shipping" className='w-[100px] mx-auto' />
+                        <h4 className='mb-2 text-2xl font-bricolage font-semibold'>Flexible Payment</h4>
+                        <p className='text-gray-600 text-sm font-medium'>
+                            Pay with Multiple Credit Cards
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/** Seen in */}
+            <div className='text-center px-[8%] lg:px-[12%] seen-in'>
+                <div>
+                    <h1 className='mb-5 font-semibold text-2xl'>As see in</h1>
+                    <Swiper
+                        spaceBetween={10}
+                        slidesPerView={6}
+                        modules={[Autoplay]}
+                        loop={true}
+                        autoplay={{ delay: 2000 }}
+                        breakpoints={{
+                            1399: { slidesPerView: 6 },
+                            1199: { slidesPerView: 6 },
+                            991: { slidesPerView: 4 },
+                            575: { slidesPerView: 2 },
+                            0: { slidesPerView: 2 }
+                        }}
+                    >
+                        <SwiperSlide>
+                            <img src={brand2} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={brand3} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={brand4} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={brand5} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={brand6} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={brand2} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={brand4} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Index;

@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "pere": "Elevate Your Space: The Art of Stylish Furnishing",
+        "title": "News",
+        "image": "/images/blog-1.webp",
+        "author": "New Post on",
+        "date": "Jan 10, 2025"
+    },
+    {
+        "id": 2,
+        "pere": "Modern Living: Creating Comfort with Minimalism",
+        "title": "Article",
+        "image": "/images/blog-2.webp",
+        "author": "Posted by Admin",
+        "date": "Jan 12, 2025"
+    },
+    {
+        "id": 3,
+        "pere": "Timeless Decor: Blending Tradition with Modernity",
+        "title": "Update",
+        "image": "/images/blog-3.webp",
+        "author": "Design Insights",
+        "date": "Jan 14, 2025"
+    },
+    {
+        "id": 4,
+        "pere": "The Power of Colors in Interior Design",
+        "title": "News",
+        "image": "/images/blog-4.webp",
+        "author": "Style Trends",
+        "date": "Jan 16, 2025"
+    },
+    {
+        "id": 5,
+        "pere": "Smart Spaces: How Technology Shapes Homes",
+        "title": "Blog",
+        "image": "/images/blog-5.webp",
+        "author": "Tech Living",
+        "date": "Jan 18, 2025"
+    },
+    {
+        "id": 6,
+        "pere": "Sustainable Style: Eco-Friendly Furnishing Ideas",
+        "title": "Article",
+        "image": "/images/blog-6.webp",
+        "author": "Eco Trends",
+        "date": "Jan 20, 2025"
+    },
+    {
+        "id": 7,
+        "pere": "Luxury Living: A Guide to Elegant Interiors",
+        "title": "Feature",
+        "image": "/images/blog-7.webp",
+        "author": "Luxury Insights",
+        "date": "Jan 22, 2025"
+    },
+    {
+        "id": 8,
+        "pere": "Creative Corners: Maximizing Small Spaces",
+        "title": "Tips",
+        "image": "/images/blog-8.webp",
+        "author": "Smart Homes",
+        "date": "Jan 24, 2025"
+    },
+    {
+        "id": 9,
+        "pere": "Textures & Patterns: Adding Depth to Your Home",
+        "title": "Update",
+        "image": "/images/blog-9.webp",
+        "author": "Design Daily",
+        "date": "Jan 26, 2025"
+    },
+    {
+        "id": 10,
+        "pere": "The Future of Workspaces: Home Office Designs",
+        "title": "Article",
+        "image": "/images/blog-10.webp",
+        "author": "Workspace Trends",
+        "date": "Jan 28, 2025"
+    },
+    {
+        "id": 11,
+        "pere": "Outdoor Living: Transforming Balconies & Gardens",
+        "title": "Blog",
+        "image": "/images/blog-11.webp",
+        "author": "Lifestyle",
+        "date": "Jan 30, 2025"
+    },
+    {
+        "id": 12,
+        "pere": "Lighting Magic: How to Brighten Your Interiors",
+        "title": "News",
+        "image": "/images/blog-12.webp",
+        "author": "Interior Glow",
+        "date": "Feb 1, 2025"
+    }
+]

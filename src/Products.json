@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "image": "/images/product1.webp",
+        "secondImage": "/images/product1.webp",
+        "productname": "Classic Leather Sneakers",
+        "price": "৳3500",
+        "tag": "New"
+    },
+    {
+        "id": 2,
+        "image": "/images/product2.webp",
+        "secondImage": "/images/product2.webp",
+        "productname": "Modern Running Shoes",
+        "price": "৳4200",
+        "tag": "Hot"
+    },
+    {
+        "id": 3,
+        "image": "/images/product3.webp",
+        "secondImage": "/images/product4.webp",
+        "productname": "Casual Canvas Sneakers",
+        "price": "৳2800",
+        "tag": "Sale"
+    },
+    {
+        "id": 4,
+        "image": "/images/product5.webp",
+        "secondImage": "/images/product6.webp",
+        "productname": "Premium Leather Boots",
+        "price": "৳5600",
+        "tag": "New"
+    },
+    {
+        "id": 5,
+        "image": "/images/product7.webp",
+        "secondImage": "/images/product8.webp",
+        "productname": "High-Top Basketball Shoes",
+        "price": "৳4800",
+        "tag": "Hot"
+    },
+    {
+        "id": 6,
+        "image": "/images/product9.webp",
+        "secondImage": "/images/product10.webp",
+        "productname": "Comfortable Slip-Ons",
+        "price": "৳2500",
+        "tag": "Sale"
+    },
+    {
+        "id": 7,
+        "image": "/images/product11.webp",
+        "secondImage": "/images/product12.webp",
+        "productname": "Stylish Sports Trainers",
+        "price": "৳3900",
+        "tag": "New"
+    },
+    {
+        "id": 8,
+        "image": "/images/product13.webp",
+        "secondImage": "/images/product14.webp",
+        "productname": "Lightweight Running Shoes",
+        "price": "৳3100",
+        "tag": "Hot"
+    },
+    {
+        "id": 9,
+        "image": "/images/product15.webp",
+        "secondImage": "/images/product16.webp",
+        "productname": "Trendy Street Sneakers",
+        "price": "৳3300",
+        "tag": "Sale"
+    },
+    {
+        "id": 10,
+        "image": "/images/product3.webp",
+        "secondImage": "/images/product4.webp",
+        "productname": "Luxury Suede Loafers",
+        "price": "৳6200",
+        "tag": "New"
+    },
+    {
+        "id": 11,
+        "image": "/images/product1.webp",
+        "secondImage": "/images/product1.webp",
+        "productname": "Everyday Walking Shoes",
+        "price": "৳2900",
+        "tag": "Hot"
+    },
+    {
+        "id": 12,
+        "image": "/images/product2.webp",
+        "secondImage": "/images/product2.webp",
+        "productname": "Classic Derby Shoes",
+        "price": "৳4500",
+        "tag": "Sale"
+    },
+    {
+        "id": 13,
+        "image": "/images/product21.webp",
+        "secondImage": "/images/product21.webp",
+        "productname": "Breathable Mesh Sneakers",
+        "price": "৳2700",
+        "tag": "New"
+    },
+    {
+        "id": 14,
+        "image": "/images/product22.webp",
+        "secondImage": "/images/product22.webp",
+        "productname": "Formal Oxford Leather Shoes",
+        "price": "৳5800",
+        "tag": "Hot"
+    },
+    {
+        "id": 15,
+        "image": "/images/product23.webp",
+        "secondImage": "/images/product23.webp",
+        "productname": "Trendy Skate Shoes",
+        "price": "৳3200",
+        "tag": "Sale"
+    },
+    {
+        "id": 16,
+        "image": "/images/product19.webp",
+        "secondImage": "/images/product19.webp",
+        "productname": "Outdoor Hiking Boots",
+        "price": "৳6900",
+        "tag": "New"
+    }
+]
