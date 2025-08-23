@@ -255,7 +255,7 @@ const Index = () => {
                                 <img src={shoesbanner} alt="female banner" className='w-full h-auto' />
                                 <div className='favourite-beauty-banner-title absolute z-10'>
                                     <h3 className='text-3xl font-bricolage text-[#ff823a]'>Empower Yourself</h3>
-                                    <p className='text-md'>Get the skin you want to feel</p>
+                                    <p className='text-md text-[#ff823a]'>Get the skin you want to feel</p>
                                     <button className='btn mt-2 px-3 py-2 rounded btn-default'>Explore More</button>
                                 </div>
                             </div>
