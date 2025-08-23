@@ -97,32 +97,32 @@
     },
     {
         "id": 13,
-        "image": "/images/product21.webp",
-        "secondImage": "/images/product21.webp",
+        "image": "/images/product21.png",
+        "secondImage": "/images/product21.png",
         "productname": "Breathable Mesh Sneakers",
         "price": "৳2700",
         "tag": "New"
     },
     {
         "id": 14,
-        "image": "/images/product22.webp",
-        "secondImage": "/images/product22.webp",
+        "image": "/images/product22.png",
+        "secondImage": "/images/product22.png",
         "productname": "Formal Oxford Leather Shoes",
         "price": "৳5800",
         "tag": "Hot"
     },
     {
         "id": 15,
-        "image": "/images/product23.webp",
-        "secondImage": "/images/product23.webp",
+        "image": "/images/product23.png",
+        "secondImage": "/images/product23.png",
         "productname": "Trendy Skate Shoes",
         "price": "৳3200",
         "tag": "Sale"
     },
     {
         "id": 16,
-        "image": "/images/product19.webp",
-        "secondImage": "/images/product19.webp",
+        "image": "/images/product19.png",
+        "secondImage": "/images/product19.png",
         "productname": "Outdoor Hiking Boots",
         "price": "৳6900",
         "tag": "New"

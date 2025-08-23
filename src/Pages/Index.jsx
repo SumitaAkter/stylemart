@@ -21,7 +21,8 @@ import brand2 from '../assets/brand-2.png';
 import brand3 from '../assets/brand-3.png';
 import brand4 from '../assets/brand-4.png';
 import brand5 from '../assets/brand-5.png';
-import brand6 from '../assets/brand-6.png';
+import brand6 from '../assets/brand-5.png';
+
 
 import shoesbanner from '../assets/Shoes-banner.jpg';
 
@@ -61,7 +62,7 @@ const Index = () => {
         }
     };
 
-    const images = [socialImage1, socialImage2, socialImage3, socialImage4, socialImage5];
+    const images = [socialImage1, socialImage2, socialImage3, socialImage4, socialImage5, socialImage1];
 
 
     return (
@@ -237,6 +238,114 @@ const Index = () => {
                     </Swiper>
                 </div>
             </div>
+
+            {/** favourite beauty */}
+            <div className='favourite-beauty px-[8%] lg:px-[12%] py-[50px] my-5'>
+                <div>
+                    <div className="grid grid-cols-1 mb-5">
+                        <div className="section-title mb-5 favourite-beauty-title w-full text-center">
+                            <h2 className='font-semibold text-3xl'>Customers Favourite beauty essentials</h2>
+                            <p className="text-gray-500">Made using clean, non-toxic ingredients, our products are designed for everyone.</p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mx-auto">
+                        <div className="w-full lg:col-span-4">
+                            <div className="favourite-beauty-banner mb-5 lg:mb-0 relative rounded">
+                                <img src={shoesbanner} alt="female banner" className='w-full h-auto' />
+                                <div className='favourite-beauty-banner-title absolute z-10'>
+                                    <h3 className='text-3xl font-bricolage'>Empower Yourself</h3>
+                                    <p className='text-md'>Get the skin you want to feel</p>
+                                    <button className='btn mt-2 px-3 py-2 rounded btn-default'>Explore More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="w-full lg:col-span-7">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                                {products.filter(product => product.id >= 11 && product.id <= 16).map(product => (
+                                    <div className='w-full mb-0' key={product.id}>
+                                        <div className="product-item text-center relative">
+                                            <div className="product-image w-full relative overflow-hidden">
+                                                <img src={product.image} alt="product" className="w-full h-auto" />
+                                                <img src={product.secondImage} alt="product" className="w-full h-auto" />
+                                                <div className="product-icons gap-3 flex justify-center items-center absolute transition duration-300">
+                                                    <div className="product-icon cursor-pointer" title='Add to Wishlist' onClick={() => addToWishlist(product)}>
+                                                        <i className='bi bi-heart text-lg'></i>
+                                                    </div>
+                                                    <div className="product-icon cursor-pointer" title='Add to Cart' onClick={() => addToCart(product)}>
+                                                        <i className='bi bi-cart3 text-lg'></i>
+                                                    </div>
+                                                </div>
+                                                {product.tag && (
+                                                    <span className={`badge text-white absolute top-2 left-2 text-xs px-2 py-1 rounded ${product.tag === 'Sale' ? 'bg-red-600' : 'bg-green-600'}`}>
+                                                        {product.tag}
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <Link to={`/product/${product.id}`} className='no-underline text-black'>
+                                                <div className="product-content pt-2">
+                                                    <span className='price no-underline'>
+                                                        {product.price}
+                                                    </span>
+                                                    <h3 className='title'>
+                                                        {product.productname}
+                                                    </h3>
+                                                </div>
+                                            </Link>
+                                        </div>
+
+                                    </div>
+                                ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/** discover */}
+            <div className="discover px-[8%] lg:px-[12%] py-10">
+                <div className="mb-10 text-center">
+                    <span className="text-lg capitalize font-semibold text-[#ff823a]">
+                        About Us
+                    </span>
+                    <h2 className='capitalize text-sm  tracking-widest font-bricolage max-w-7xl mx-auto lg:text-5xl mb-3'>
+                        Welcome to multi store
+                    </h2>
+                    <p className='capitalize text-sm text-[#777777] tracking-widest font-bricolage max-w-7xl mx-auto lg:text-xl'>
+                        StyleMart brings you stylish, comfy, and trendy shoes designed for every occasion.
+                        Our collections blend modern fashion with lasting comfort, from casual sneakers to elegant formal wear. Shopping is simple with fast delivery secure payments, and reliable customer service. Every step you take reflects confidence, style, and quality, now with exclusive deals on the latest styles. Step into your best look with StyleMart, where fashion meets comfort.
+                    </p>
+                </div>
+
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+                    <img src={discover1} className='w-full' alt="" />
+                    <img src={discover2} className='w-full' alt="" />
+                </div>
+            </div>
+            {/** Spcial Image container */}
+            <div className="social-mage-container px-5 pt-[50px] mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 cursor-pointer gap-4">
+                {images.map((img, index) => (
+                    <div key={index} className='relative overflow-hidden group rounded-lg'>
+                        <img src={img} alt="" className='w-full object-cover'/>
+                        <i className='bi bi-instagram absolute inset-0 flex items-center justify-center text-white text-5xl opacity-[0] group-hover:opacity-[1] bg-black/50 transition duration-300'></i>
+                    </div>
+                ))}
+                </div>
+            </div>
+
+            <ToastContainer
+            position='top-right'
+            autoClose={1500}
+            hideProgressBar={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            />
         </>
     );
 };
