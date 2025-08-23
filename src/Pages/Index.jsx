@@ -254,7 +254,7 @@ const Index = () => {
                             <div className="favourite-beauty-banner mb-5 lg:mb-0 relative rounded">
                                 <img src={shoesbanner} alt="female banner" className='w-full h-auto' />
                                 <div className='favourite-beauty-banner-title absolute z-10'>
-                                    <h3 className='text-3xl font-bricolage'>Empower Yourself</h3>
+                                    <h3 className='text-3xl font-bricolage text-[#ff823a]'>Empower Yourself</h3>
                                     <p className='text-md'>Get the skin you want to feel</p>
                                     <button className='btn mt-2 px-3 py-2 rounded btn-default'>Explore More</button>
                                 </div>
@@ -307,10 +307,10 @@ const Index = () => {
             {/** discover */}
             <div className="discover px-[8%] lg:px-[12%] py-10">
                 <div className="mb-10 text-center">
-                    <span className="text-lg capitalize font-semibold text-[#ff823a]">
+                    <span className="text-lg capitalize font-bold text-[#ff823a]">
                         About Us
                     </span>
-                    <h2 className='capitalize text-sm  tracking-widest font-bricolage max-w-7xl mx-auto lg:text-5xl mb-3'>
+                    <h2 className='capitalize text-2xl  tracking-widest font-bricolage font-semibold max-w-7xl mx-auto lg:text-5xl mb-3'>
                         Welcome to multi store
                     </h2>
                     <p className='capitalize text-sm text-[#777777] tracking-widest font-bricolage max-w-7xl mx-auto lg:text-xl'>
@@ -338,7 +338,7 @@ const Index = () => {
 
             <ToastContainer
             position='top-right'
-            autoClose={1500}
+            autoClose={3000}
             hideProgressBar={false}
             closeOnClick
             rtl={false}
