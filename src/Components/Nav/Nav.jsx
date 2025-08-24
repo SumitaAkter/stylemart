@@ -51,7 +51,7 @@ const Nav = () => {
                     </button>
 
                     <Link to='/' className='mx-auto order-0 lg:hidden flex'>
-                        <h2 className='text-3xl font-bold font-bricolage tracking-widest'>Style <span className='font-bricolage'>Mart</span></h2>
+                        <h2 className='text-3xl font-bold font-bricolage tracking-widest'>Style <span className='font-bricolage text-[#ff823a]'>Mart</span></h2>
                     </Link>
 
                     <ul className='lg:hidden flex items-center gap-4'>
@@ -94,7 +94,7 @@ const Nav = () => {
                         </ul>
 
                         <Link to='' className='hidden lg:flex'>
-                            <h2 className='text-3xl font-bold font-bricolage tracking-widest'>Style <span className='font-briocolage'>Mart</span></h2>
+                            <h2 className='text-3xl font-bold font-bricolage tracking-widest'>Style <span className='font-briocolage text-[#ff823a]'>Mart</span></h2>
                         </Link>
 
                         <ul className='hidden lg:flex items-center gap-4'>

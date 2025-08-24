@@ -71,7 +71,7 @@ const Wishlist = () => {
                   <i className="fa fa-cart-plus"></i> Move to Cart
                 </button>
                 <button
-                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-red-400 text-white hover:bg-red-500 transition"
+                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-red-500 text-white hover:bg-red-600 transition"
                   onClick={() => removeFromWishlist(item.id)}
                 >
                   <i className="fa fa-trash"></i> Remove
