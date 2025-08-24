@@ -1,8 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
+    const [cartCount, setcartCount] = useState(0);
+    const [wishlistCount, setwishlistCount] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const updatedCounts = () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        const totalCartItems = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
+        setcartCount(totalCartItems);
+        setwishlistCount(wishlist.length);
+    }
+
+    useEffect(() => {
+        updatedCounts();
+
+        const handleCartUpdated = () => updatedCounts();
+        const handleWishlistUpdated = () => updatedCounts();
+
+        window.addEventListener('cartUpdated', handleCartUpdated);
+        window.addEventListener('wishlistUpdated', handleWishlistUpdated);
+
+        const onStorageChange = (e) => {
+            if (e.key === 'cart' || e.key === 'wishlist') {
+                updatedCounts();
+            }
+        };
+        window.addEventListener('storage', onStorageChange);
+
+        return () => {
+            window.removeEventListener('cartUpdated', handleCartUpdated);
+            window.removeEventListener('wishlistUpdated', handleWishlistUpdated);
+            window.removeEventListener('storage', onStorageChange);
+        };
+    },[]);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -25,7 +59,7 @@ const Nav = () => {
                             <Link to='/Wishlist'>
                                 <i className='bi bi-heart text-lg text-black'></i>
                                 <span className='absolute -top-2 -right-2 w-[22px] h-[22px] text-xs bg-black text-white rounded-full flex items-center justify-center'>
-                                    0
+                                    {wishlistCount}
                                 </span>
                             </Link>
                         </li>
@@ -33,7 +67,7 @@ const Nav = () => {
                             <Link to='/Cart'>
                                 <i className='bi bi-bag text-lg text-black'></i>
                                 <span className='absolute -top-2 -right-2 w-[22px] h-[22px] text-xs bg-black text-white rounded-full flex items-center justify-center'>
-                                    0
+                                    {cartCount}
                                 </span>
                             </Link>
                         </li>
@@ -68,7 +102,7 @@ const Nav = () => {
                                 <Link to='/Wishlist'>
                                     <i className='bi bi-heart text-lg text-black'></i>
                                     <span className='absolute -top-2 -right-2 w-[22px] h-[22px] text-xs bg-black text-white rounded-full flex items-center justify-center'>
-                                        0
+                                        {wishlistCount}
                                     </span>
                                 </Link>
                             </li>
@@ -76,7 +110,7 @@ const Nav = () => {
                                 <Link to='/Cart'>
                                     <i className='bi bi-bag text-lg text-black'></i>
                                     <span className='absolute -top-2 -right-2 w-[22px] h-[22px] text-xs bg-black text-white rounded-full flex items-center justify-center'>
-                                        0
+                                        {cartCount}
                                     </span>
                                 </Link>
                             </li>

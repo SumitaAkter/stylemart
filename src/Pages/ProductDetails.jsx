@@ -80,7 +80,7 @@ const ProductDetails = () => {
   style={{ backgroundImage: `url(${bannerImage})` }}
 >
   {/* Overlay */}
-  <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+  <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
   {/* Dynamic Product Name */}
   <div className="relative text-center text-white z-10">

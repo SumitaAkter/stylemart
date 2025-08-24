@@ -5,6 +5,7 @@ import Nav from './Components/Nav/Nav'
 import Index from './Pages/Index'
 import Footer from './Components/Footer/Footer'
 import ProductDetails from './Pages/ProductDetails'
+import Cart from './Pages/Cart'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Index />} />
         <Route path='/product/:id' element={<ProductDetails />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
       
