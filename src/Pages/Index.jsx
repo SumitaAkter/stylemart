@@ -319,32 +319,39 @@ const Index = () => {
                     </p>
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-                    <img src={discover1} className='w-full' alt="" />
-                    <img src={discover2} className='w-full' alt="" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                    {[discover1, discover2].map((src, i) => (
+                        <img
+                            key={i}
+                            src={src}
+                            alt=""
+                            className="w-full h-auto object-cover rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg"
+                        />
+                    ))}
                 </div>
+
             </div>
             {/** Spcial Image container */}
             <div className="social-mage-container px-5 pt-[50px] mx-auto">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 cursor-pointer gap-4">
-                {images.map((img, index) => (
-                    <div key={index} className='relative overflow-hidden group rounded-lg'>
-                        <img src={img} alt="" className='w-full object-cover'/>
-                        <i className='bi bi-instagram absolute inset-0 flex items-center justify-center text-white text-5xl opacity-[0] group-hover:opacity-[1] bg-black/50 transition duration-300'></i>
-                    </div>
-                ))}
+                    {images.map((img, index) => (
+                        <div key={index} className='relative overflow-hidden group rounded-lg'>
+                            <img src={img} alt="" className='w-full object-cover' />
+                            <i className='bi bi-instagram absolute inset-0 flex items-center justify-center text-white text-5xl opacity-[0] group-hover:opacity-[1] bg-black/50 transition duration-300'></i>
+                        </div>
+                    ))}
                 </div>
             </div>
 
             <ToastContainer
-            position='top-right'
-            autoClose={3000}
-            hideProgressBar={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
+                position='top-right'
+                autoClose={3000}
+                hideProgressBar={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
             />
         </>
     );

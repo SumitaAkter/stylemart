@@ -90,7 +90,7 @@ const Cart = () => {
                                                     className="w-10 h-10 rounded bg-black text-white hover:bg-gray transition text-lg"
                                                     onClick={() => updateQuantity(item.id, 'increase')}>+</button>
                                                 <button
-                                                    className="flex items-center justify-center gap-2 px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600 transition ml-2"
+                                                    className="flex items-center justify-center gap-2 px-3 py-1 rounded bg-black text-white hover:bg-red-600 transition ml-2"
                                                     onClick={() => removeItem(item.id)}>
                                                     <i className="fa fa-trash"></i> Remove
                                                 </button>
@@ -116,7 +116,7 @@ const Cart = () => {
                                 </div>
                                 <Link
                                     to="/checkout"
-                                    className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-gray-800 hover:scale-[1.03] transition-transform duration-200"
+                                    className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-green-700 hover:scale-[1.03] transition-transform duration-200"
                                 >
                                     <i className="fa fa-cart-plus"></i> Proceed to Checkout
                                 </Link>

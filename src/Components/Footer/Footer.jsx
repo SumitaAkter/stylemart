@@ -90,16 +90,22 @@ const Footer = () => {
                                 </p>
                                 <div className='flex gap-3 text-xl text-[#333]'>
                                     <i href="https://www.facebook.com/sumita.akter.771/" className='hover:text-[#ff823a] transition ri-instagram-line cursor-pointer'></i>
-                                    <i href="https://www.facebook.com/sumita.akter.771/"  className='hover:text-[#ff823a] transition ri-twitter-x-line cursor-pointer'></i>
-                                    <i href="https://www.facebook.com/sumita.akter.771/"  className='hover:text-[#ff823a] transition ri-facebook-circle-fill cursor-pointer'></i>
-                                    <i href="https://www.facebook.com/sumita.akter.771/"  className='hover:text-[#ff823a] transition ri-youtube-fill cursor-pointer'></i>
+                                    <i href="https://www.facebook.com/sumita.akter.771/" className='hover:text-[#ff823a] transition ri-twitter-x-line cursor-pointer'></i>
+                                    <i href="https://www.facebook.com/sumita.akter.771/" className='hover:text-[#ff823a] transition ri-facebook-circle-fill cursor-pointer'></i>
+                                    <i href="https://www.facebook.com/sumita.akter.771/" className='hover:text-[#ff823a] transition ri-youtube-fill cursor-pointer'></i>
                                 </div>
                             </div>
                             <div className="flex gap-2 justify-center">
                                 {[payment1, payment2, payment3, payment4, payment5, payment6].map((src, i) => (
-                                    <img key={i} src={src} alt='' className='h-6 w-auto object-contain' />
+                                    <img
+                                        key={i}
+                                        src={src}
+                                        alt=""
+                                        className="h-6 w-auto object-contain transform transition duration-200 hover:scale-110 hover:rotate-1"
+                                    />
                                 ))}
                             </div>
+
                         </div>
                     </div>
                 </div>

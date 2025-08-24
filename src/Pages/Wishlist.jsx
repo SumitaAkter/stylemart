@@ -65,13 +65,13 @@ const Wishlist = () => {
               
               <div className="flex justify-between gap-2 mt-4">
                 <button
-                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-black text-white hover:bg-gray-700 transition"
+                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-black text-white hover:bg-green-700 transition"
                   onClick={() => moveToCart(item)}
                 >
                   <i className="fa fa-cart-plus"></i> Move to Cart
                 </button>
                 <button
-                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-red-500 text-white hover:bg-red-600 transition"
+                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-black text-white hover:bg-red-600 transition"
                   onClick={() => removeFromWishlist(item.id)}
                 >
                   <i className="fa fa-trash"></i> Remove
