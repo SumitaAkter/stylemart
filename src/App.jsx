@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Nav from './Components/Nav/Nav'
 import Index from './Pages/Index'
 import Footer from './Components/Footer/Footer'
+import ProductDetails from './Pages/ProductDetails'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Index />} />
+        <Route path='/product/:id' element={<ProductDetails />} />
       </Routes>
       <Footer />
       

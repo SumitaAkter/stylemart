@@ -174,7 +174,7 @@ const Index = () => {
                     </div>
                     <div>
                         <img src={serviceImg2} alt="Free Shipping" className='w-[100px] mx-auto' />
-                        <h4 className='mb-2 text-2xl font-bricolage font-semibold'>Retuns</h4>
+                        <h4 className='mb-2 text-2xl font-bricolage font-semibold'>Returns</h4>
                         <p className='text-gray-600 text-sm font-medium'>
                             Within 30 days for an exchange.
                         </p>

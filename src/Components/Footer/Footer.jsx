@@ -18,7 +18,7 @@ const Footer = () => {
                             <div className='flex flex-col md:flex-row gap gap-8'>
                                 <div className='md:w-1/3'>
                                     <Link to='/' className='block mb-3'>
-                                        <h2 className='text-3xl font-bold font-bricolage'>Style <span className='text-[#ff823a] font-bricolage'>mart</span></h2>
+                                        <h2 className='text-3xl font-bold font-bricolage'>Style <span className='text-[#ff823a] font-bricolage'>Mart</span></h2>
                                     </Link>
                                     <p>
                                         Discover the latest trends and enjoy seamless shopping with our exclusive collections.
