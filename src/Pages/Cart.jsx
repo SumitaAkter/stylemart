@@ -116,7 +116,7 @@ const Cart = () => {
                                 </div>
                                 <Link
                                     to="/checkout"
-                                    className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-green-700 hover:scale-[1.03] transition-transform duration-200"
+                                    className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] hover:scale-[1.03] transition-transform duration-200"
                                 >
                                     <i className="fa fa-cart-plus"></i> Proceed to Checkout
                                 </Link>

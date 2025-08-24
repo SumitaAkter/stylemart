@@ -65,7 +65,7 @@ const Wishlist = () => {
               
               <div className="flex justify-between gap-2 mt-4">
                 <button
-                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-black text-white hover:bg-green-700 transition"
+                  className="flex items-center justify-center gap-2 w-1/2 py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] transition"
                   onClick={() => moveToCart(item)}
                 >
                   <i className="fa fa-cart-plus"></i> Move to Cart
