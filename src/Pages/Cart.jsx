@@ -48,7 +48,7 @@ const Cart = () => {
             </ol>
 
             <div className="lg:py-[3%] lg:px-[12%] py-[10px] my-2">
-                <h2 className="text-center text-4xl mb-4 font-bold">💛 Your Cart</h2>
+                <h2 className="text-center text-4xl mb-4 font-bold">Your Cart</h2>
 
                 {cartItems.length === 0 ? (
                     <div className="text-center">
@@ -57,20 +57,20 @@ const Cart = () => {
                     </div>
                 ) : (
                     <div className="mt-12 grid gap-16 lg:grid-cols-12">
+
                         {/* Cart Items */}
                         <div className="lg:col-span-6">
                             {cartItems.map(item => (
-                                <div 
-                                    key={item.id} 
+                                <div
+                                    key={item.id}
                                     className="bg-white shadow-md rounded-2xl p-4 mb-4 transform transition duration-300 hover:shadow-lg hover:scale-[1.02]"
                                 >
                                     <div className="grid grid-cols-12 items-center gap-4">
-                                        {/* Image */}
                                         <div className="col-span-4">
                                             <img src={item.image} alt={item.productname} className="w-full rounded-lg" />
                                         </div>
 
-                                        {/* Details */}
+
                                         <div className="col-span-8">
                                             <div className="text-start w-full">
                                                 <h5 className="mb-2 font-bold">{item.productname}</h5>
@@ -112,6 +112,7 @@ const Cart = () => {
                             ))}
                         </div>
 
+
                         {/* Cart Summary */}
                         <div className="lg:col-span-5">
                             <div className="card border-0 shadow-md rounded-2xl p-5 bg-white flex flex-col min-h-[200px]">
@@ -125,8 +126,8 @@ const Cart = () => {
                                     <span>Total Price:</span>
                                     <span className="font-bold">${totalPrice.toFixed(2)}</span>
                                 </div>
-                                <Link 
-                                    to="/checkout" 
+                                <Link
+                                    to="/checkout"
                                     className="btn w-full mt-1 px-3 py-2 rounded bg-blue-500 text-white text-center"
                                 >
                                     Proceed to checkout

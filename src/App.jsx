@@ -6,6 +6,7 @@ import Index from './Pages/Index'
 import Footer from './Components/Footer/Footer'
 import ProductDetails from './Pages/ProductDetails'
 import Cart from './Pages/Cart'
+import Wishlist from './Pages/Wishlist'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Index />} />
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/wishlist' element={<Wishlist />} />
       </Routes>
       <Footer />
       
