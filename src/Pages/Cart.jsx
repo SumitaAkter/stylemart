@@ -115,7 +115,7 @@ const Cart = () => {
                                     <span className="font-bold text-[#ff823a]">${totalPrice.toFixed(2)}</span>
                                 </div>
                                 <Link
-                                    to="/checkout"
+                                    to="/Checkout"
                                     className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] hover:scale-[1.03] transition-transform duration-200"
                                 >
                                     <i className="fa fa-cart-plus"></i> Proceed to Checkout

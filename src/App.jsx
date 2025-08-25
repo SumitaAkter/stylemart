@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer'
 import ProductDetails from './Pages/ProductDetails'
 import Cart from './Pages/Cart'
 import Wishlist from './Pages/Wishlist'
+import Checkout from './Pages/Checkout'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/wishlist' element={<Wishlist />} />
+        <Route path='/Checkout' element={<Checkout />} />
       </Routes>
       <Footer />
       
