@@ -9,10 +9,11 @@ const Checkout = () => {
 
     useEffect(() => {
         const savedcart = JSON.parse(localStorage.getItem('cart')) || [];
+        setcartItems(savedcart); // ✅ এখানে update
     }, []);
 
     const handlePlaceorder = () => {
-        toast.success('Order Placed Successfull')
+        toast.success('Order Placed Successfully');
     };
 
     const totalPrice = cartItems.reduce((acc, item) => {
@@ -27,7 +28,9 @@ const Checkout = () => {
             <h2 className="text-center text-5xl mb-4 font-bold font-bricolage mt-[3%] md:mt-[7%]">Checkout!</h2>
             <div className='px-[8%] lg:px-[12%] py-[50px]'>
                 <div className='grid gap-4 lg:grid-cols-12'>
+                    {/* Left Section */}
                     <div className='lg:col-span-7'>
+                        {/* Contact */}
                         <h5 className="mb-2 font-semibold">Contact</h5>
                         <div className='mb-3'>
                             <input type="email" className='border w-full p-2' placeholder='Email or mobile phone number' />
@@ -39,6 +42,7 @@ const Checkout = () => {
                             </label>
                         </div>
 
+                        {/* Delivery */}
                         <h5 className="mb-2 font-semibold">Delivery</h5>
                         <div>
                             <div className='mb-3'>
@@ -69,7 +73,7 @@ const Checkout = () => {
                                         <select className='form-select border p-1'>
                                             <option>Bangladesh</option>
                                             <option>United State</option>
-                                            <option>united Kingdom</option>
+                                            <option>United Kingdom</option>
                                         </select>
                                     </div>
                                     <div>
@@ -93,7 +97,7 @@ const Checkout = () => {
                                     <div className='flex justify-between items-center mb-2'>
                                         <h6 className='font-semibold mb-0'>Store Location</h6>
                                         <a href='#' className='text-decoration-none text-sm'>
-                                            change Location
+                                            Change Location
                                         </a>
                                     </div>
                                     <div
@@ -117,8 +121,7 @@ const Checkout = () => {
                                             className='underline'
                                             style={{ color: "#7b1c1c" }}
                                         >Ship to address
-                                        </a> {""}
-                                        instead
+                                        </a> instead
                                     </div>
                                 </div>
                             )}
@@ -131,7 +134,7 @@ const Checkout = () => {
                         </div>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-3 mb-2'>
                             <div>
-                                <input type="text" className='border w-full p-2' placeholder='city' />
+                                <input type="text" className='border w-full p-2' placeholder='City' />
                             </div>
                             <div>
                                 <input type="text" className='border w-full p-2' placeholder='Postal code(optional)' />
@@ -139,17 +142,19 @@ const Checkout = () => {
                         </div>
                         <div className='form-check mb-4'>
                             <input type="checkbox" id='saveInfo' />
-                            <label htmlFor="" className='ms-1'>
+                            <label htmlFor="saveInfo" className='ms-1'>
                                 Save this information for next time
                             </label>
                         </div>
 
-                        <h6 className='mb-2'>Shipping Mathod</h6>
+                        {/* Shipping Method */}
+                        <h6 className='mb-2'>Shipping Method</h6>
                         <div className='rounded p-3 flex justify-between items-center' style={{ border: "1px solid darkblue", backgroundColor: '#f0f5ff' }}>
                             <span>Standard</span>
                             <span className='text-green-600'>FREE</span>
                         </div>
 
+                        {/* Payment */}
                         <div className="my-5">
                             <h4 className='font-semibold'>Payment</h4>
                             <p className='text-gray-500 mb-3'>All transactions are secure and encrypted.</p>
@@ -179,7 +184,7 @@ const Checkout = () => {
                                     </div>
 
                                     <div className="form-check mb-3">
-                                        <input type="checkbox" className='form-check-input' id='billingCheck' checked />
+                                        <input type="checkbox" className='form-check-input' id='billingCheck' defaultChecked />
                                         <label htmlFor="billingCheck" className='form-check-label'>
                                             Use billing address as billing address
                                         </label>
@@ -187,24 +192,23 @@ const Checkout = () => {
                                 </div>
                             </div>
                             <button
-   
-  className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a]  transition-transform duration-75"
->
-  <i className="fa fa-credit-card"></i>
-  Pay Now
-</button>
-
-
+                                className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] transition-transform duration-75"
+                            >
+                                <i className="fa fa-credit-card"></i>
+                                Pay Now
+                            </button>
 
                             <div className="mt-5 border-t pt-3">
                                 <a href="#" className='text-decoration-none text-sm underline'>Privacy Policy</a>
                             </div>
                         </div>
                     </div>
+
+                    {/* Right Section - Order Summary */}
                     <div className="lg:col-span-5">
                         <div className="card border-0 shadow-sm rounded-4 p-4">
                             <h5 className='font-bold mb-3 font-bricolage'>
-                                <i className='ri-shopping-card-2-line  text-[#ff823a]'></i>Order Summary
+                                <i className='ri-shopping-card-2-line text-[#ff823a]'></i> Order Summary
                             </h5>
                             {cartItems.length === 0 ? (
                                 <p className='text-gray-500'>Your Cart is empty</p>
@@ -214,12 +218,11 @@ const Checkout = () => {
                                         <img src={item.image} alt={item.name} className='rounded' width='60' height='60' style={{ objectFit: "cover", marginRight: "10px" }} />
                                         <div className="flex-grow">
                                             <h6 className="mb-1 font-bricolage">{item.productname}</h6>
-                                            <small className='text-gray-600'>
-                                                Qty:{item.quantity}
-                                            </small>
+                                            <small className='text-gray-600'>Qty: {item.quantity}</small>
                                         </div>
                                         <div className="font-semibold">
-                                            ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}</div>
+                                            ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
+                                        </div>
                                     </div>
                                 ))
                             )}
@@ -240,13 +243,14 @@ const Checkout = () => {
                                 <span>Total</span>
                                 <span className='font-bricolage'>${(totalPrice + parseFloat(estimatedTax)).toFixed(2)}</span>
                             </div>
+
                             <button
-  onClick={handlePlaceorder}
-  className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] transition-transform duration-75 mt-3 mb-5"
->
-  <i className="ri-secure-payment-line"></i>
-  Place Order
-</button>
+                                onClick={handlePlaceorder}
+                                className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] transition-transform duration-75 mt-3 mb-5"
+                            >
+                                <i className="ri-secure-payment-line"></i>
+                                Place Order
+                            </button>
 
                             <Link to='/Cart' className='btn p-2 rounded px-3 transition-all text-decoration-none'>
                                 <i className='ri-arrow-left-line me-1'></i> Back to cart
@@ -255,8 +259,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer
-            />
+            <ToastContainer />
         </>
     );
 };
