@@ -3,22 +3,26 @@ import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 
 const Checkout = () => {
+    const [deliveryOption, setDeliveryOption] = useState('ship');
+    const [cartItems, setCartItems] = useState([]);
 
-    const [deliveryOption, setdeliveryOption] = useState('ship');
-    const [cartItems, setcartItems] = useState([]);
-
+    // Load cart items from localStorage
     useEffect(() => {
-        const savedcart = JSON.parse(localStorage.getItem('cart')) || [];
-        setcartItems(savedcart); // ✅ এখানে update
+        const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        setCartItems(savedCart);
     }, []);
 
     const handlePlaceorder = () => {
         toast.success('Order Placed Successfully');
     };
 
+    // Safe price calculation
     const totalPrice = cartItems.reduce((acc, item) => {
-        const price = parseFloat(item.price.replace('$', ''));
-        return acc + price * item.quantity;
+        let price = item.price;
+        if (typeof price === "string") price = price.replace(/[^0-9.]/g, "");
+        price = parseFloat(price) || 0;
+        const quantity = item.quantity || 1;
+        return acc + price * quantity;
     }, 0);
 
     const estimatedTax = (totalPrice * 0.1).toFixed(2);
@@ -30,7 +34,6 @@ const Checkout = () => {
                 <div className='grid gap-4 lg:grid-cols-12'>
                     {/* Left Section */}
                     <div className='lg:col-span-7'>
-                        {/* Contact */}
                         <h5 className="mb-2 font-semibold">Contact</h5>
                         <div className='mb-3'>
                             <input type="email" className='border w-full p-2' placeholder='Email or mobile phone number' />
@@ -42,7 +45,6 @@ const Checkout = () => {
                             </label>
                         </div>
 
-                        {/* Delivery */}
                         <h5 className="mb-2 font-semibold">Delivery</h5>
                         <div>
                             <div className='mb-3'>
@@ -53,7 +55,7 @@ const Checkout = () => {
                                         name='deliveryOption'
                                         id='ship'
                                         checked={deliveryOption === 'ship'}
-                                        onChange={() => setdeliveryOption('ship')}
+                                        onChange={() => setDeliveryOption('ship')}
                                     />
                                     <label className='btn btn-outline-primary px-2 me-3 rounded-lg ml-2' htmlFor="ship">Ship</label>
                                     <input
@@ -62,7 +64,7 @@ const Checkout = () => {
                                         name='deliveryOption'
                                         id='pickup'
                                         checked={deliveryOption === 'pickup'}
-                                        onChange={() => setdeliveryOption('pickup')}
+                                        onChange={() => setDeliveryOption('pickup')}
                                     />
                                     <label className='btn btn-outline-primary px-2 me-3 rounded-lg ml-2' htmlFor="pickup"> Pickup in store</label>
                                 </div>
@@ -92,40 +94,8 @@ const Checkout = () => {
                                     </div>
                                 </div>
                             )}
-                            {deliveryOption === 'pickup' && (
-                                <div className='my-4'>
-                                    <div className='flex justify-between items-center mb-2'>
-                                        <h6 className='font-semibold mb-0'>Store Location</h6>
-                                        <a href='#' className='text-decoration-none text-sm'>
-                                            Change Location
-                                        </a>
-                                    </div>
-                                    <div
-                                        className='alert alert-danger p-2 flex flex-col rounded-3'
-                                        role='alert'
-                                        style={{
-                                            color: "#7b1c1c",
-                                            backgroundColor: "#fef6f6",
-                                            border: '1px solid rgba(145, 137, 137, .59)'
-                                        }}
-                                    >
-                                        <div className='flex items items-center mb-1'>
-                                            <i className='bi bi-exclamation-circle-fill me-2'
-                                                style={{ fontSize: "1rem" }}></i>
-                                        </div>
-                                        <strong>No Stores available with your item</strong>
-                                    </div>
-                                    <div>
-                                        <a
-                                            href="#"
-                                            className='underline'
-                                            style={{ color: "#7b1c1c" }}
-                                        >Ship to address
-                                        </a> instead
-                                    </div>
-                                </div>
-                            )}
                         </div>
+
                         <div className="mb-3">
                             <input type="text" className='border w-full p-2' placeholder='Address' />
                         </div>
@@ -140,6 +110,7 @@ const Checkout = () => {
                                 <input type="text" className='border w-full p-2' placeholder='Postal code(optional)' />
                             </div>
                         </div>
+
                         <div className='form-check mb-4'>
                             <input type="checkbox" id='saveInfo' />
                             <label htmlFor="saveInfo" className='ms-1'>
@@ -147,14 +118,12 @@ const Checkout = () => {
                             </label>
                         </div>
 
-                        {/* Shipping Method */}
                         <h6 className='mb-2'>Shipping Method</h6>
                         <div className='rounded p-3 flex justify-between items-center' style={{ border: "1px solid darkblue", backgroundColor: '#f0f5ff' }}>
                             <span>Standard</span>
                             <span className='text-green-600'>FREE</span>
                         </div>
 
-                        {/* Payment */}
                         <div className="my-5">
                             <h4 className='font-semibold'>Payment</h4>
                             <p className='text-gray-500 mb-3'>All transactions are secure and encrypted.</p>
@@ -170,7 +139,6 @@ const Checkout = () => {
                                     <div className="mb-3">
                                         <input type="text" className='border w-full p-2' placeholder='Card number' />
                                     </div>
-
                                     <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
                                         <div>
                                             <input type="text" className='border w-full p-2' placeholder='Expiration Date (MM / YY)' />
@@ -182,7 +150,6 @@ const Checkout = () => {
                                     <div className="mb-3 mt-3">
                                         <input type="text" className='border w-full p-2' placeholder='Name on card' />
                                     </div>
-
                                     <div className="form-check mb-3">
                                         <input type="checkbox" className='form-check-input' id='billingCheck' defaultChecked />
                                         <label htmlFor="billingCheck" className='form-check-label'>
@@ -191,8 +158,9 @@ const Checkout = () => {
                                     </div>
                                 </div>
                             </div>
+
                             <button
-                                className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] transition-transform duration-75"
+                                className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded bg-black text-white hover:bg-[#ff823a] transition-transform duration-75 mt-3 mb-3"
                             >
                                 <i className="fa fa-credit-card"></i>
                                 Pay Now
@@ -213,18 +181,24 @@ const Checkout = () => {
                             {cartItems.length === 0 ? (
                                 <p className='text-gray-500'>Your Cart is empty</p>
                             ) : (
-                                cartItems.map(item => (
-                                    <div key={item.id} className='flex items-center mb-3 border-b pb-2'>
-                                        <img src={item.image} alt={item.name} className='rounded' width='60' height='60' style={{ objectFit: "cover", marginRight: "10px" }} />
-                                        <div className="flex-grow">
-                                            <h6 className="mb-1 font-bricolage">{item.productname}</h6>
-                                            <small className='text-gray-600'>Qty: {item.quantity}</small>
+                                cartItems.map((item, index) => {
+                                    let price = item.price;
+                                    if (typeof price === "string") price = price.replace(/[^0-9.]/g, "");
+                                    price = parseFloat(price) || 0;
+                                    let quantity = item.quantity || 1;
+                                    let itemTotal = price * quantity;
+
+                                    return (
+                                        <div key={index} className='flex items-center mb-3 border-b pb-2'>
+                                            <img src={item.image} alt={item.name} className='rounded' width='60' height='60' style={{ objectFit: "cover", marginRight: "10px" }} />
+                                            <div className="flex-grow">
+                                                <h6 className="mb-1 font-bricolage">{item.productname}</h6>
+                                                <small className='text-gray-600'>Qty: {quantity}</small>
+                                            </div>
+                                            <div className="font-semibold">${itemTotal.toFixed(2)}</div>
                                         </div>
-                                        <div className="font-semibold">
-                                            ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
-                                        </div>
-                                    </div>
-                                ))
+                                    )
+                                })
                             )}
                             <hr />
                             <div className="flex justify-between text-sm pt-2">
