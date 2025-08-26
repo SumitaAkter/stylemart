@@ -73,23 +73,22 @@ const ProductDetails = () => {
     return (
 
         <>
-            {/* Background Banner */}
-           {/* Background Banner */}
-<div
-  className="w-full h-80 bg-cover bg-center flex items-center justify-center relative"
-  style={{ backgroundImage: `url(${bannerImage})` }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-  {/* Dynamic Product Name */}
-  <div className="relative text-center text-white z-10">
-    <h6 className="uppercase mb-2">- StyleMart</h6>
-    <h1 className="text-4xl md:text-6xl font-bold">
-      {product.productname}
-    </h1>
-  </div>
-</div>
+            <div
+                className="w-full h-80 bg-cover bg-center flex items-center justify-center relative"
+                style={{ backgroundImage: `url(${bannerImage})` }}
+            >
+                
+                <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+                
+                <div className="relative text-center text-white z-10">
+                    <h6 className="uppercase mb-2">- StyleMart</h6>
+                    <h1 className="text-4xl md:text-6xl font-bold">
+                        {product.productname}
+                    </h1>
+                </div>
+            </div>
 
 
             <ToastContainer />

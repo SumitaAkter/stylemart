@@ -6,6 +6,17 @@ const Checkout = () => {
     const [deliveryOption, setDeliveryOption] = useState('ship');
     const [cartItems, setCartItems] = useState([]);
 
+    // 🏠 Address State
+    const [address, setAddress] = useState({
+        country: "Bangladesh",
+        firstName: "",
+        lastName: "",
+        street: "",
+        apartment: "",
+        city: "",
+        postalCode: ""
+    });
+
     // Load cart items from localStorage
     useEffect(() => {
         const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -72,9 +83,13 @@ const Checkout = () => {
                             {deliveryOption === 'ship' && (
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 mb-3'>
                                     <div className='mb-3 md:col-span-2'>
-                                        <select className='form-select border p-1'>
+                                        <select 
+                                            className='form-select border p-1'
+                                            value={address.country}
+                                            onChange={(e) => setAddress({ ...address, country: e.target.value })}
+                                        >
                                             <option>Bangladesh</option>
-                                            <option>United State</option>
+                                            <option>United States</option>
                                             <option>United Kingdom</option>
                                         </select>
                                     </div>
@@ -83,6 +98,8 @@ const Checkout = () => {
                                             type="text"
                                             className='border w-full p-2'
                                             placeholder='First name'
+                                            value={address.firstName}
+                                            onChange={(e) => setAddress({ ...address, firstName: e.target.value })}
                                         />
                                     </div>
                                     <div>
@@ -90,6 +107,8 @@ const Checkout = () => {
                                             type="text"
                                             className='border w-full p-2'
                                             placeholder='Last name (optional)'
+                                            value={address.lastName}
+                                            onChange={(e) => setAddress({ ...address, lastName: e.target.value })}
                                         />
                                     </div>
                                 </div>
@@ -97,17 +116,41 @@ const Checkout = () => {
                         </div>
 
                         <div className="mb-3">
-                            <input type="text" className='border w-full p-2' placeholder='Address' />
+                            <input 
+                                type="text" 
+                                className='border w-full p-2' 
+                                placeholder='Address'
+                                value={address.street}
+                                onChange={(e) => setAddress({ ...address, street: e.target.value })}
+                            />
                         </div>
                         <div className="mb-3">
-                            <input type="text" className='border w-full p-2' placeholder='Apartment, suite, etc.(optional)' />
+                            <input 
+                                type="text" 
+                                className='border w-full p-2' 
+                                placeholder='Apartment, suite, etc.(optional)' 
+                                value={address.apartment}
+                                onChange={(e) => setAddress({ ...address, apartment: e.target.value })}
+                            />
                         </div>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-3 mb-2'>
                             <div>
-                                <input type="text" className='border w-full p-2' placeholder='City' />
+                                <input 
+                                    type="text" 
+                                    className='border w-full p-2' 
+                                    placeholder='City' 
+                                    value={address.city}
+                                    onChange={(e) => setAddress({ ...address, city: e.target.value })}
+                                />
                             </div>
                             <div>
-                                <input type="text" className='border w-full p-2' placeholder='Postal code(optional)' />
+                                <input 
+                                    type="text" 
+                                    className='border w-full p-2' 
+                                    placeholder='Postal code(optional)' 
+                                    value={address.postalCode}
+                                    onChange={(e) => setAddress({ ...address, postalCode: e.target.value })}
+                                />
                             </div>
                         </div>
 
@@ -207,7 +250,11 @@ const Checkout = () => {
                             </div>
                             <div className="flex justify-between text-sm pt-2">
                                 <span>Shipping</span>
-                                <span>Enter address</span>
+                                <span>
+                                    {address.street
+                                        ? `${address.firstName} ${address.lastName}, ${address.street}, ${address.city}, ${address.country} - ${address.postalCode}`
+                                        : "Enter address"}
+                                </span>
                             </div>
                             <div className="flex justify-between text-sm pt-2">
                                 <span>Estimated Tax</span>

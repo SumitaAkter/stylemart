@@ -44,12 +44,13 @@
     "image": "/images/product3.webp",
     "secondImage": "/images/product4.webp",
     "productname": "Casual Canvas Sneakers",
+    "oldprice": "৳3100",
     "price": "৳2800",
     "tag": "Sale",
     "category": "Casual",
     "vendor": "Brand C",
-    "d-title": "Everyday Comfort & Style",
-    "d-des": "Casual Canvas Sneakers are perfect for everyday wear, combining comfort and style. Made with durable canvas materials and cushioned insoles, they provide excellent breathability and support. Ideal for streetwear, casual outings, and light activity, they are easy to pair with any outfit.",
+    "dtitle": "Everyday Comfort & Style",
+    "ddes": "Casual Canvas Sneakers are perfect for everyday wear, combining comfort and style. Made with durable canvas materials and cushioned insoles, they provide excellent breathability and support. Ideal for streetwear, casual outings, and light activity, they are easy to pair with any outfit.",
     "dsubtitle": "Features & Benefits",
     "dsubdes": [
       "Durable canvas upper",
@@ -68,8 +69,8 @@
     "tag": "New",
     "category": "Boots",
     "vendor": "Brand D",
-    "d-title": "Rugged Durability & Style",
-    "d-des": "Premium Leather Boots are designed to combine rugged durability with classic style. Perfect for outdoor adventures, work, or casual wear, these boots feature high-quality leather, cushioned insoles, and a strong rubber outsole. They offer all-day comfort and protection, making them a reliable choice for any occasion.",
+    "dtitle": "Rugged Durability & Style",
+    "ddes": "Premium Leather Boots are designed to combine rugged durability with classic style. Perfect for outdoor adventures, work, or casual wear, these boots feature high-quality leather, cushioned insoles, and a strong rubber outsole. They offer all-day comfort and protection, making them a reliable choice for any occasion.",
     "dsubtitle": "Features & Benefits",
     "dsubdes": [
       "High-quality leather construction",
@@ -104,6 +105,7 @@
     "image": "/images/product9.webp",
     "secondImage": "/images/product10.webp",
     "productname": "Comfortable Slip-Ons",
+    "oldprice": "৳3000",
     "price": "৳2500",
     "tag": "Sale",
     "category": "Slip-Ons",
@@ -120,50 +122,11 @@
     ]
   },
   {
-    "id": 7,
-    "image": "/images/product11.webp",
-    "secondImage": "/images/product12.webp",
-    "productname": "Stylish Sports Trainers",
-    "price": "৳3900",
-    "tag": "New",
-    "category": "Trainers",
-    "vendor": "Brand G",
-    "dtitle": "Athletic Comfort & Modern Style",
-    "ddes": "Stylish Sports Trainers combine performance and aesthetics for everyday activities. Lightweight construction, cushioned soles, and breathable materials make them ideal for gym, running, or casual wear. Their modern design ensures you stay fashionable while staying active.",
-    "dsubtitle": "Features & Benefits",
-    "dsubdes": [
-      "Lightweight breathable design",
-      "Cushioned midsole for comfort",
-      "Durable rubber outsole",
-      "Modern stylish appearance",
-      "Perfect for athletic and casual use"
-    ]
-  },
-  {
-    "id": 8,
-    "image": "/images/product13.webp",
-    "secondImage": "/images/product14.webp",
-    "productname": "Lightweight Running Shoes",
-    "price": "৳3100",
-    "tag": "Hot",
-    "category": "Running Shoes",
-    "vendor": "Brand B",
-    "dtitle": "Speed and Comfort Combined",
-    "ddes": "Lightweight Running Shoes are crafted to provide optimal performance for running enthusiasts. Designed with breathable materials, responsive cushioning, and durable outsoles, they offer comfort and support for every stride. Ideal for casual runs, fitness sessions, and daily activities.",
-    "dsubtitle": "Features & Benefits",
-    "dsubdes": [
-      "Breathable lightweight upper",
-      "Responsive cushioning",
-      "Durable traction outsole",
-      "Available in multiple sizes and colors",
-      "Perfect for running and workouts"
-    ]
-  },
-  {
     "id": 9,
     "image": "/images/product15.webp",
     "secondImage": "/images/product16.webp",
     "productname": "Trendy Street Sneakers",
+    "oldprice": "৳3900",
     "price": "৳3300",
     "tag": "Sale",
     "category": "Sneakers",
@@ -180,57 +143,18 @@
     ]
   },
   {
-    "id": 10,
-    "image": "/images/product3.webp",
-    "secondImage": "/images/product4.webp",
-    "productname": "Luxury Suede Loafers",
-    "price": "৳6200",
-    "tag": "New",
-    "category": "Loafers",
-    "vendor": "Brand H",
-    "dtitle": "Premium Style & Comfort",
-    "ddes": "Luxury Suede Loafers are crafted from high-quality suede for an elegant and comfortable look. Perfect for formal and semi-formal occasions, they offer cushioned comfort and classic style. Durable soles and premium finishing make these loafers a must-have for fashion-conscious individuals.",
-    "dsubtitle": "Features & Benefits",
-    "dsubdes": [
-      "High-quality suede construction",
-      "Cushioned insole for comfort",
-      "Durable rubber outsole",
-      "Elegant and stylish design",
-      "Perfect for formal and semi-formal wear"
-    ]
-  },
-  {
-    "id": 11,
-    "image": "/images/product1.webp",
-    "secondImage": "/images/product1.webp",
-    "productname": "Everyday Walking Shoes",
-    "price": "৳2900",
-    "tag": "Hot",
-    "category": "Walking Shoes",
-    "vendor": "Brand A",
-    "dtitle": "Comfortable Shoes for Daily Walks",
-    "ddes": "Everyday Walking Shoes are designed for comfort and durability, providing superior support for all-day walking. Lightweight materials, cushioned insoles, and flexible outsoles ensure that your feet remain comfortable during long walks and daily activities.",
-    "dsubtitle": "Features & Benefits",
-    "dsubdes": [
-      "Lightweight breathable upper",
-      "Cushioned insole for support",
-      "Flexible rubber outsole",
-      "Durable construction",
-      "Ideal for daily walks and casual use"
-    ]
-  },
-  {
     "id": 12,
     "image": "/images/product2.webp",
     "secondImage": "/images/product2.webp",
     "productname": "Classic Derby Shoes",
+    "oldprice": "৳5000",
     "price": "৳4500",
     "tag": "Sale",
     "category": "Derby Shoes",
     "vendor": "Brand B",
     "dtitle": "Timeless Design & Comfort",
     "ddes": "Classic Derby Shoes are a staple for formal and business attire, combining timeless design with all-day comfort. Crafted from premium materials, these shoes feature cushioned insoles and durable soles, perfect for office wear, meetings, and special occasions.",
-    "d-sub-title": "Features & Benefits",
+    "dsubtitle": "Features & Benefits",
     "dsubdes": [
       "Premium leather construction",
       "Cushioned insole for comfort",
@@ -244,6 +168,7 @@
     "image": "/images/product21.png",
     "secondImage": "/images/product21.png",
     "productname": "Breathable Mesh Sneakers",
+    "oldprice": "৳3100",
     "price": "৳2700",
     "tag": "New",
     "category": "Sneakers",
@@ -284,6 +209,7 @@
     "image": "/images/product23.png",
     "secondImage": "/images/product23.png",
     "productname": "Trendy Skate Shoes",
+    "oldprice": "৳3500",
     "price": "৳3200",
     "tag": "Sale",
     "category": "Skate Shoes",
@@ -320,3 +246,5 @@
     ]
   }
 ]
+
+

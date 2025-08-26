@@ -215,6 +215,9 @@ const Index = () => {
                         }}
                     >
                         <SwiperSlide>
+                            <img src={brand1} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
+                        </SwiperSlide>
+                        <SwiperSlide>
                             <img src={brand2} className='w-[200px] h-[80px] object-cover border rounded border-black p-3' alt="" />
                         </SwiperSlide>
                         <SwiperSlide>
