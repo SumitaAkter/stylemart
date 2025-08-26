@@ -122,6 +122,47 @@
     ]
   },
   {
+    "id": 7,
+    "image": "/images/product11.webp",
+    "secondImage": "/images/product12.webp",
+    "productname": "High-Top Street Sneakers",
+    "price": "৳2500",
+    "tag": "Sale",
+    "category": "Slip-Ons",
+    "vendor": "Brand F",
+    "dtitle": "Easy Wear, All Day Comfort",
+    "ddes": "High-Top Street Sneakers are ideal for people who value convenience and comfort. With breathable uppers, cushioned insoles, and easy slip-on design, these shoes are perfect for daily wear, travel, or casual outings. Lightweight and stylish, they complement any casual outfit.",
+    "dsubtitle": "Features & Benefits",
+    "dsubdes": [
+      "Easy slip-on design",
+      "Breathable upper material",
+      "Cushioned insole for comfort",
+      "Lightweight and versatile",
+      "Perfect for daily casual wear"
+    ]
+  },
+  {
+    "id": 8,
+    "image": "/images/product13.webp",
+    "secondImage": "/images/product14.webp",
+    "productname": "Water Proof Outdoor Shoes",
+    "oldprice": "৳3900",
+    "price": "৳3300",
+    "tag": "Sale",
+    "category": "Sneakers",
+    "vendor": "Brand C",
+    "dtitle": "Street Style with Comfort",
+    "ddes": "Water Proof Outdoor Shoes are designed for fashion-forward individuals who also value comfort. With durable materials, cushioned insoles, and eye-catching designs, they are perfect for casual outings, streetwear looks, and everyday wear. Available in multiple sizes and colors.",
+    "dsubtitle": "Features & Benefits",
+    "dsubdes": [
+      "Durable and stylish materials",
+      "Cushioned insole for all-day comfort",
+      "Lightweight design",
+      "Perfect for streetwear and casual outings",
+      "Multiple colors and sizes available"
+    ]
+  },
+  {
     "id": 9,
     "image": "/images/product15.webp",
     "secondImage": "/images/product16.webp",
@@ -140,6 +181,47 @@
       "Lightweight design",
       "Perfect for streetwear and casual outings",
       "Multiple colors and sizes available"
+    ]
+  },
+    {
+    "id": 10,
+    "image": "/images/product3.webp",
+    "secondImage": "/images/product4.webp",
+    "productname": "Limited Edition Trainers",
+    "oldprice": "৳3700",
+    "price": "৳3100",
+    "tag": "Sale",
+    "category": "Sneakers",
+    "vendor": "Brand p",
+    "dtitle": "Street Style with Comfort",
+    "ddes": "Limited Edition Trainers are designed for fashion-forward individuals who also value comfort. With durable materials, cushioned insoles, and eye-catching designs, they are perfect for casual outings, streetwear looks, and everyday wear. Available in multiple sizes and colors.",
+    "dsubtitle": "Features & Benefits",
+    "dsubdes": [
+      "Durable and stylish materials",
+      "Cushioned insole for all-day comfort",
+      "Lightweight design",
+      "Perfect for streetwear and casual outings",
+      "Multiple colors and sizes available"
+    ]
+  },
+  {
+    "id": 11,
+    "image": "/images/product1.webp",
+    "secondImage": "/images/product1.webp",
+    "productname": "Minimalist White Sneakers",
+    "price": "৳5200",
+    "tag": "Hot",
+    "category": "Oxford Shoes",
+    "vendor": "Brand J",
+    "dtitle": "Elegant & Professional",
+    "ddes": "Minimalist White Sneakers offer an elegant and professional appearance for office and formal events. Premium leather, cushioned insoles, and durable construction provide comfort, support, and lasting quality. Ideal for individuals seeking both style and sophistication.",
+    "dsubtitle": "Features & Benefits",
+    "dsubdes": [
+      "Premium leather upper",
+      "Cushioned insole for comfort",
+      "Durable outsole",
+      "Elegant and professional look",
+      "Perfect for office and formal wear"
     ]
   },
   {
