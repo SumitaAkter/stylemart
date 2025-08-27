@@ -127,37 +127,37 @@ const Index = () => {
                         {products.filter(product => product.id >= 5 && product.id <= 10).map(product => (
                             <SwiperSlide key={product.id}>
                                 <div className="product-item text-center relative">
-                                    <div className="product-image w-full relative overflow-hidden">
-                                        <img src={product.image} alt="product" className="w-full h-auto" />
-                                        <img src={product.secondImage} alt="product" className="w-full h-auto" />
-                                        <div className="product-icons gap-3 flex justify-center items-center absolute transition duration-300">
-                                            <div className="product-icon cursor-pointer" title='Add to Wishlist' onClick={() => addToWishlist(product)}>
-                                                <i className='bi bi-heart text-lg'></i>
-                                            </div>
-                                            <div className="product-icon cursor-pointer" title='Add to Cart' onClick={() => addToCart(product)}>
-                                                <i className='bi bi-cart3 text-lg'></i>
-                                            </div>
-                                        </div>
-                                        {product.tag && (
-                                            <span className={`badge text-white absolute top-2 left-2 text-xs px-2 py-1 rounded ${product.tag === 'Sale' ? 'bg-red-600' : 'bg-green-600'}`}>
-                                                {product.tag}
-                                            </span>
-                                        )}
-                                    </div>
                                     <Link to={`/product/${product.id}`} className='no-underline text-black'>
-                                        <div className="product-content pt-2">
-                                            <span className='price no-underline'>
-                                                {product.price}
-                                            </span>
-                                            <h3 className='title'>
-                                                {product.productname}
-                                            </h3>
+                                        <div className="product-image w-full relative overflow-hidden">
+                                            <img src={product.image} alt="product" className="w-full h-auto" />
+                                            <img src={product.secondImage} alt="product" className="w-full h-auto" />
+                                            <div className="product-icons gap-3 flex justify-center items-center absolute transition duration-300">
+                                                <div className="product-icon cursor-pointer" title='Add to Wishlist' onClick={(e) => { e.preventDefault(); addToWishlist(product); }}>
+                                                    <i className='bi bi-heart text-lg'></i>
+                                                </div>
+                                                <div className="product-icon cursor-pointer" title='Add to Cart' onClick={(e) => { e.preventDefault(); addToCart(product); }}>
+                                                    <i className='bi bi-cart3 text-lg'></i>
+                                                </div>
+                                            </div>
+                                            {product.tag && (
+                                                <span className={`badge text-white absolute top-2 left-2 text-xs px-2 py-1 rounded ${product.tag === 'Sale' ? 'bg-red-600' : 'bg-green-600'}`}>
+                                                    {product.tag}
+                                                </span>
+                                            )}
                                         </div>
                                     </Link>
+                                    <div className="product-content pt-2">
+                                        <span className='price no-underline'>
+                                            {product.price}
+                                        </span>
+                                        <h3 className='title'>
+                                            {product.productname}
+                                        </h3>
+                                    </div>
                                 </div>
                             </SwiperSlide>
-
                         ))}
+
                     </Swiper>
                 </div>
             </div>

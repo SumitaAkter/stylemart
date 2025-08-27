@@ -55,7 +55,7 @@ function Contact() {
                     <iframe
                         title='Our Location'
                         className='map rounded w-full h-96'
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14144.961920894002!2d90.35855565104697!3d23.807471358100642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1764d78c5fb%3A0x72ef8385abd98414!2sFS%20Square!5e1!3m2!1sen!2sbd!4v1756314134247!5m2!1sen!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29205.791083482407!2d90.374144!3d23.7928448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1764d78c5fb%3A0x72ef8385abd98414!2sFS%20Square!5e0!3m2!1sen!2sbd!4v1756318332555!5m2!1sen!2sbd"
                         allowFullScreen
                     ></iframe>
                 </section>
