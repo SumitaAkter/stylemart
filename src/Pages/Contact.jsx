@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import bannerImage from '../assets/section-banner.jpg'
 
 function Contact() {
     const [isSent, setIsSent] = useState(false);
@@ -22,8 +21,8 @@ function Contact() {
                         expert beauty tips for radiand skin.
                     </p>
 
-                    <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 mt-10'>
-                        <div className="contact-box text-left p-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-3 mt-8">
+                        <div className="contact-box text-left p-4 shadow-md hover:shadow-lg rounded transition-shadow duration-300">
                             <i className='ri-map-pin-line text-3xl icon mb-2'></i>
                             <h5 className='text-2xl font-semibold mb-1 font-bricolage'>Address</h5>
                             <p>FS Tower, 5th Floor, Mirpur-10, Dhaka</p>
@@ -32,20 +31,23 @@ function Contact() {
                                 Get Direction
                             </a>
                         </div>
-                        <div className="contact-box text-left p-6">
+
+                        <div className="contact-box text-left p-4 shadow-md hover:shadow-lg rounded transition-shadow duration-300">
                             <i className='ri-phone-line text-3xl icon mb-2'></i>
                             <h5 className='text-2xl font-semibold mb-1 font-bricolage'>Contact</h5>
                             <p className='text-gray-400'><strong className='text-black'>Mobile:</strong> +880 1392763899</p>
                             <p className='text-gray-400'><strong className='text-black'>Phone:</strong> +880 1358993399</p>
                             <p className='text-gray-400'><strong className='text-black'>Email:</strong> sumitaakter530@gmail.com</p>
                         </div>
-                        <div className="contact-box text-left p-6">
+
+                        <div className="contact-box text-left p-4 shadow-md hover:shadow-lg rounded transition-shadow duration-300">
                             <i className='ri-time-line text-3xl icon mb-2'></i>
                             <h5 className='text-2xl font-semibold mb-1 font-bricolage'>Working Hour</h5>
                             <p className='text-gray-400'><strong className='text-black'>Mon - Fri:</strong> 08:30 - 20:00</p>
                             <p className='text-gray-400'><strong className='text-black'>Sat & Sun:</strong> 10:00 - 21:00</p>
                         </div>
                     </div>
+
                 </div>
             </section>
 
