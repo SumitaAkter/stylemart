@@ -73,7 +73,7 @@ function Contact() {
                         </div>
 
                         {isSent ? (
-                            <p className="text-green-600 font-semibold mb-5">✅ Your message sent successfully</p>
+                            <p className="text-green-600 text-start font-semibold mb-5">Your message sent successfully</p>
                         ) : (
                             <button
                                 type='submit'
