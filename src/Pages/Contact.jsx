@@ -8,7 +8,7 @@ function Contact() {
         setIsSent(true);
 
         // 20 sec পর আবার button ফিরে আসবে
-        setTimeout(() => setIsSent(false), 20000);
+        setTimeout(() => setIsSent(false), 5000);
     };
 
     return (
